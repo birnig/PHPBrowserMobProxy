@@ -34,6 +34,7 @@ class PHPBrowserMobProxy_Client
     /**
      * Open connection to the proxy
      *
+     * @param array $headers Optionally override request headers
      * @return void
      */
     public function open()
@@ -64,7 +65,7 @@ class PHPBrowserMobProxy_Client
      */
     public function close()
     {
-        $response = Requests::delete("http://{$this->browsermob_url}/{$this->port}");
+        $response = Requests::delete("http://{$this->browsermob_url}/proxy/{$this->port}");
     }
 
     /**
